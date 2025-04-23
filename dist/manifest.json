@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Crew Roster Exporter",
+  "version": "1.0.0",
+  "description": "Export and print your flight crew roster from the web portal.",
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "storage",
+    "identity"
+  ],
+  "host_permissions": [
+    "https://crew-auea-prod.roiscloud.com/qq/portal/page/roster*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Crew Roster Exporter"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://crew-auea-prod.roiscloud.com/qq/portal/page/roster*"],
+      "js": ["content/content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content/styles.css",
+        "content/flying-cards.js"
+      ],
+      "matches": ["https://crew-auea-prod.roiscloud.com/*"]
+    }
+  ],
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  }
+}

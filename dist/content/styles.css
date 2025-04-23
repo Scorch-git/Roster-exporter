@@ -1,0 +1,1620 @@
+/* Print styles for roster extension */
+.print-container {
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  padding: 0;
+  background-color: white;
+  color: #333;
+}
+
+.print-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.print-header h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.print-header h2 {
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+/* Summary section styling */
+.roster-summary {
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.summary-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #1976d2;
+  text-align: center;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 8px;
+  justify-items: center;
+}
+
+.summary-item {
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 6px 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  text-align: center;
+  min-width: 100px;
+}
+
+.summary-label {
+  font-size: 10px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.summary-value {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1976d2;
+}
+
+/* Date title bar */
+.date-title-bar {
+  background-color: #1976d2;
+  color: white;
+  padding: 8px 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.date-range {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.print-title {
+  background-color: #1976d2;
+  color: white;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.date-details {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.print-calendar-container, .print-day-container {
+  margin-bottom: 20px;
+}
+
+/* Calendar view styles */
+.calendar-view {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.calendar-container {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar-container th {
+  background-color: #f5f5f5;
+  padding: 6px;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 12px;
+}
+
+.calendar-container td {
+  border: 1px solid #ddd;
+  padding: 3px;
+  vertical-align: top;
+  height: 90px;
+  width: 14.28%;
+  font-size: 11px;
+}
+
+.calendar-day-header {
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 3px;
+  font-size: 11px;
+}
+
+.calendar-day-content {
+  font-size: 11px;
+}
+
+/* Calendar specific styles */
+.label-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.label-month {
+  font-size: 12px;
+  color: #666;
+}
+
+.label-day {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.task-view {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.task {
+  padding: 4px 8px;
+  border-radius: 3px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  width: 90%;
+}
+
+.time-view {
+  display: flex;
+  justify-content: center;
+  font-size: 11px;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* Day layout */
+.day {
+  padding: 8px;
+  border: 1px solid #eee;
+  min-height: 100px;
+  width: calc(100% / 7);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Week layout */
+.daybox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Calendar header */
+.headbox {
+  display: flex;
+  width: 100%;
+}
+
+.headdate {
+  width: calc(100% / 7);
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 0;
+  background-color: #f5f5f5;
+  border: 1px solid #eee;
+  box-sizing: border-box;
+}
+
+/* Day view styles */
+.day-view {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.day-view {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.day-section {
+  margin-bottom: 12px; /* Reduced from default */
+}
+
+.day-header {
+  padding: 4px 6px; /* Reduced padding */
+  font-size: 0.9em; /* Smaller font size */
+}
+
+.duty-type-badge {
+  padding: 2px 4px; /* Smaller badges */
+  font-size: 0.8em;
+  margin-right: 3px;
+}
+
+.duty-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9em; /* Smaller font */
+  margin-bottom: 0; /* Remove bottom margin */
+}
+
+.duty-table th {
+  padding: 3px 5px; /* Reduced cell padding */
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.duty-table td {
+  padding: 3px 5px; /* Reduced cell padding */
+  vertical-align: top;
+}
+
+.flight-leg-inline {
+  margin-bottom: 3px; /* Less space between flight legs */
+}
+
+.flight-number, .flight-detail, .flight-time {
+  font-size: 0.9em; /* Smaller font */
+}
+
+.flight-times {
+  font-size: 0.85em; /* Smaller time text */
+}
+
+.crew-detail {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: 0.85em;
+  padding: 2px 4px;
+}
+
+.crew-member {
+  margin-bottom: 1px;
+  font-size: 0.8em;
+}
+
+.crew-change-indicator {
+  font-size: 0.7em;
+  padding: 0 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+}
+
+.compact-day-view {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.duty-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.duty-table th {
+  background-color: #f5f5f5;
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+  font-weight: bold;
+}
+
+.duty-table td {
+  border: 1px solid #ddd;
+  padding: 6px;
+  vertical-align: top;
+}
+
+/* Duty type colors */
+.duty-rdo {
+  background-color: #e9fbe5;
+}
+
+.duty-sby {
+  background-color: #fff9c4;
+}
+
+.duty-fly {
+  background-color: #e5f2ff;
+}
+
+.duty-dhd {
+  background-color: #ff5dc8; /* Updated to match calendar view bright pink */
+}
+
+.dhd-duty {
+  font-weight: bold;
+  color: #e91e63;
+  padding: 4px;
+}
+
+/* Flight details styling */
+.flight-leg-inline {
+  margin-bottom: 8px;
+}
+
+.flight-number {
+  font-weight: bold;
+  color: #1976d2;
+}
+
+.aircraft-info {
+  color: #666;
+  font-style: italic;
+}
+
+.route-inline {
+  margin: 3px 0;
+}
+
+.origin, .destination {
+  font-weight: bold;
+}
+
+.route-separator {
+  color: #999;
+  margin: 0 4px;
+}
+
+.crew-inline, .crew-detail {
+  font-size: 11px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.crew-detail {
+  white-space: normal;
+  color: #333;
+}
+
+.crew-member {
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+
+.crew-change-notice {
+  font-weight: bold;
+  color: #d32f2f;
+  font-size: 11px;
+  margin-bottom: 4px;
+  background-color: #ffebee;
+  padding: 2px 4px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.flight-time, .block-hours, .cred-hours {
+  font-weight: bold;
+  color: #1976d2;
+  text-align: center;
+}
+
+.flight-separator {
+  border-top: 1px dashed #ddd;
+  margin: 8px 0;
+}
+
+.location, .training {
+  font-weight: bold;
+}
+
+/* Preserve RDO (green) and FLY (blue) colors */
+[style*="background-color: rgb(233, 251, 229)"],
+[style*="background-color: rgb(55, 201, 18)"],
+[style*="background-color: rgb(5, 160, 69)"],
+[style*="background-color: green"],
+[class*="rdo"] {
+  background-color: #e9fbe5 !important;
+  color: #37c912 !important;
+}
+
+[style*="background-color: rgb(229, 242, 255)"],
+[style*="background-color: rgb(0, 122, 255)"],
+[style*="background-color: blue"],
+[class*="fly"] {
+  background-color: #e5f2ff !important;
+  color: #007aff !important;
+}
+
+/* Standby colors */
+[style*="background-color: rgb(255, 249, 196)"],
+[class*="sby"] {
+  background-color: #fff9c4 !important;
+  color: #fbc02d !important;
+}
+
+/* Additional roster-specific styles */
+[data-v-49188c51] {
+  box-sizing: border-box;
+}
+
+/* Fix any layout issues */
+.roster-left, .roster-right-content {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Fix any specific container styles */
+.calendar-container, .month-container {
+  width: 100% !important;
+}
+
+/* Print-specific styles */
+@media print {
+  @page {
+    size: landscape;
+    margin: 0.3cm;
+  }
+  
+  body { 
+    margin: 0; 
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    font-size: 9pt;
+  }
+  
+  .print-container { 
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* More compact summary boxes for print */
+  .roster-summary {
+    margin-bottom: 8px;
+    padding: 4px;
+  }
+  
+  .summary-title {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  
+  .summary-grid {
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    gap: 4px;
+  }
+  
+  .summary-item {
+    padding: 2px 4px;
+    min-width: 70px;
+  }
+  
+  .summary-label {
+    font-size: 7px;
+    margin-bottom: 1px;
+  }
+  
+  .summary-value {
+    font-size: 10px;
+  }
+  
+  .date-title-bar {
+    padding: 4px 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  /* More compact calendar for print */
+  .calendar-container th {
+    padding: 2px;
+    font-size: 9px;
+  }
+  
+  .calendar-container td {
+    padding: 1px;
+    height: 70px;
+    font-size: 8px;
+  }
+  
+  .calendar-day-header {
+    margin-bottom: 1px;
+    font-size: 9px;
+  }
+  
+  .calendar-day-content {
+    font-size: 8px;
+  }
+  
+  .task {
+    padding: 2px 4px;
+    font-size: 8px;
+    width: 95%;
+  }
+  
+  .time-view {
+    font-size: 7px;
+  }
+  
+  .label-day {
+    font-size: 12px;
+  }
+  
+  .label-month {
+    font-size: 8px;
+  }
+  
+  /* Hide non-essential elements when printing */
+  button, input, select, .no-print { 
+    display: none !important; 
+  }
+  
+  body * {
+    visibility: hidden;
+  }
+  
+  .print-container, .print-container * {
+    visibility: visible;
+  }
+  
+  .print-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+}
+
+/* Ensure all colored elements print with color */
+[style*="background-color"] {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .calendar-container td {
+    height: 80px;
+    font-size: 11px;
+  }
+  
+  .duty-table {
+    font-size: 10px;
+  }
+  
+  .duty-table th, .duty-table td {
+    padding: 4px;
+  }
+}
+
+/* Day view table styles */
+.day-view-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.day-view-table th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+  text-align: left;
+  padding: 8px;
+  border-bottom: 2px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.day-view-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+/* Day separator */
+.day-separator td {
+  height: 15px;
+  background-color: #f9f9f9;
+  border-bottom: 1px dashed #ccc;
+}
+
+/* Day date header */
+.day-date-header {
+  background-color: #f0f8ff;
+}
+
+.day-date-header td {
+  padding: 8px;
+  font-weight: bold;
+  border-bottom: 2px solid #1e88e5;
+  border-top: 1px solid #1e88e5;
+}
+
+/* Multi-duty day header */
+.multi-duty-header {
+  background-color: #fff0f0;
+}
+
+.multi-duty-header td {
+  border-bottom: 2px solid #e57373;
+  border-top: 1px solid #e57373;
+}
+
+.day-column {
+  font-weight: bold;
+  width: 50px;
+  text-align: center;
+  background-color: #e3f2fd;
+}
+
+.date-column {
+  position: relative;
+}
+
+.day-date-cell {
+  font-weight: bold;
+  display: inline-block;
+}
+
+.mixed-duty-indicator {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.mini-duty-badge {
+  display: inline-block;
+  font-size: 10px;
+  margin-right: 4px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  color: white;
+}
+
+.fly-badge {
+  background-color: #64B5F6;
+}
+
+.dhd-badge {
+  background-color: #ff5dc8;
+}
+
+.rdo-badge {
+  background-color: #9575CD;
+}
+
+.sby-badge {
+  background-color: #05A045;
+}
+
+/* Duty type badges and colors */
+.duty-type-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+  font-size: 11px;
+}
+
+/* Known duty types with specific colors - matching calendar view */
+.fly-header .duty-type-badge, .fly .mini-badge, .fly-badge {
+  background-color: #007aff; /* Blue to match calendar */
+  color: white;
+}
+
+.dhd-header .duty-type-badge, .dhd .mini-badge, .dhd-badge {
+  background-color: #ff5dc8; /* Pink to match calendar */
+  color: white;
+}
+
+.rdo-header .duty-type-badge, .rdo .mini-badge, .rdo-badge {
+  background-color: #37c912; /* Green to match calendar */
+  color: white;
+}
+
+.sby-header .duty-type-badge, .sby .mini-badge, .sby-badge {
+  background-color: #fbc02d; /* Yellow to match calendar */
+  color: black;
+}
+
+.trg-header .duty-type-badge, .trg .mini-badge, .trg-badge {
+  background-color: #FF8A65; /* Orange */
+  color: white;
+}
+
+.ofd-header .duty-type-badge, .ofd .mini-badge, .ofd-badge {
+  background-color: #FFB74D; /* Light Orange */
+  color: black;
+}
+
+.sim-header .duty-type-badge, .sim .mini-badge, .sim-badge {
+  background-color: #4DD0E1; /* Cyan */
+  color: black;
+}
+
+.gnd-header .duty-type-badge, .gnd .mini-badge, .gnd-badge {
+  background-color: #7986CB; /* Indigo */
+  color: white;
+}
+
+/* Header backgrounds to match calendar view */
+.fly-header {
+  background-color: #e5f2ff; /* Light blue to match calendar */
+}
+
+.dhd-header {
+  background-color: #ff9ad5; /* Updated to match calendar view pink */
+}
+
+.rdo-header {
+  background-color: #e9fbe5; /* Light green to match calendar */
+}
+
+.sby-header {
+  background-color: #fff9c4; /* Light yellow to match calendar */
+}
+
+/* Flight detail rows border colors */
+.flight-detail-row.fly {
+  border-left: 3px solid #007aff; /* Blue to match calendar */
+}
+
+.flight-detail-row.dhd {
+  border-left: 3px solid #ff5dc8; /* Pink to match calendar */
+}
+
+.flight-detail-row.rdo {
+  border-left: 3px solid #37c912; /* Green to match calendar */
+}
+
+.flight-detail-row.sby {
+  border-left: 3px solid #fbc02d; /* Yellow to match calendar */
+}
+
+/* Duty type header rows */
+.day-header {
+  background-color: #f5f5f5;
+}
+
+.fly-header {
+  background-color: #e3f2fd;
+}
+
+.dhd-header {
+  background-color: #eeafe0;
+}
+
+.rdo-header {
+  background-color: #f3e5f5;
+}
+
+.sby-header {
+  background-color: #e0f2f1;
+}
+
+.day-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.duty-type-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+  font-size: 11px;
+}
+
+.fly-header .duty-type-badge {
+  background-color: #64B5F6;
+}
+
+.dhd-header .duty-type-badge {
+  background-color: #ff5dc8;
+}
+
+.rdo-header .duty-type-badge {
+  background-color: #9575CD;
+}
+
+.sby-header .duty-type-badge {
+  background-color: #05A045;
+}
+
+/* Flight detail rows */
+.flight-detail-row {
+  background-color: #ffffff;
+}
+
+.flight-detail-row:hover {
+  background-color: #f5f5f5;
+}
+
+.flight-detail-row.fly {
+  border-left: 3px solid #64B5F6;
+}
+
+.flight-detail-row.dhd {
+  border-left: 3px solid #ff5dc8;
+}
+
+.mini-badge {
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: bold;
+  color: white;
+  background-color: #aaa;
+}
+
+.fly .mini-badge {
+  background-color: #64B5F6;
+}
+
+.dhd .mini-badge {
+  background-color: #ff5dc8;
+}
+
+/* Crew change indicator */
+.crew-change {
+  background-color: #fff8e1;
+  border-top: 1px dashed #ffca28;
+}
+
+.crew-change-indicator {
+  font-size: 9px;
+  color: #f57c00;
+  background-color: #ffe0b2;
+  padding: 1px 3px;
+  border-radius: 2px;
+  margin-right: 4px;
+  margin-bottom: 5px;
+}
+
+/* Duty description for non-flight duties */
+.duty-description {
+  font-style: italic;
+  color: #666;
+}
+
+/* No data container */
+.no-data-container {
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+}
+
+.no-data {
+  max-width: 500px;
+  text-align: center;
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.no-data h3 {
+  color: #e53935;
+  margin-top: 0;
+}
+
+.no-data p {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Print preview navbar styles */
+.print-preview-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(25, 118, 210, 0.9);
+  backdrop-filter: blur(5px);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+  font-family: Arial, sans-serif;
+}
+
+.navbar-title {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.navbar-button {
+  background-color: white;
+  color: #1976d2;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-button:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-button:active {
+  transform: translateY(0);
+}
+
+.print-button {
+  background-color: #2196f3;
+  color: white;
+}
+
+.print-button:hover {
+  background-color: #1976d2;
+}
+
+/* Hide navbar when printing */
+@media print {
+  .print-preview-navbar {
+    display: none !important;
+  }
+  
+  /* Remove any margins/padding added for the navbar */
+  body {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Crew Roster Navbar Styles */
+.crew-roster-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(25, 118, 210, 0.9);
+  backdrop-filter: blur(5px);
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100000;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.crew-roster-title {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.crew-roster-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.crew-roster-navbar-button {
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.standard-button {
+  background-color: white;
+  color: #1976d2;
+}
+
+.standard-button:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-button {
+  background-color: #4285F4;
+  color: white;
+}
+
+.calendar-button:hover {
+  background-color: #3367d6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Calendar Export Modal Styles */
+.calendar-export-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100001;
+  font-family: Arial, sans-serif;
+}
+
+.calendar-export-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.calendar-export-header {
+  margin-top: 0;
+  color: #1976d2;
+  font-size: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.calendar-export-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+}
+
+.calendar-export-options {
+  margin: 15px 0;
+}
+
+.calendar-export-all {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-events-list {
+  margin-top: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.calendar-event-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-event-item:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.calendar-event-details {
+  flex: 1;
+}
+
+.calendar-event-title {
+  font-weight: bold;
+}
+
+.add-to-gcal {
+  background-color: #4285F4;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.calendar-action-section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.calendar-close-button {
+  background-color: #f5f5f5;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-close-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Flying Days Summary Styles */
+.flying-days-summary {
+  margin: 15px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.flying-days-summary h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #1976d2;
+}
+
+.flying-days-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.flying-day-item {
+  display: flex;
+  align-items: center;
+  background-color: #e3f2fd;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #bbdefb;
+}
+
+.flying-day-checkbox {
+  margin-right: 5px;
+}
+
+/* Navbar styles */
+.crew-roster-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(25, 118, 210, 0.9);
+  backdrop-filter: blur(5px);
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100000;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.crew-roster-title {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.crew-roster-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.crew-roster-navbar-button {
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.crew-roster-navbar-button.calendar-button {
+  background-color: #4285F4;
+  color: white;
+}
+
+.crew-roster-navbar-button.calendar-button:hover {
+  background-color: #3367d6;
+}
+
+.crew-roster-navbar-button.standard-button {
+  background-color: white;
+  color: #1976d2;
+}
+
+.crew-roster-navbar-button.standard-button:hover {
+  background-color: #f5f5f5;
+}
+
+.crew-roster-navbar-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.crew-roster-navbar-button:active {
+  transform: translateY(0);
+}
+
+/* Print preview navbar styles */
+.print-preview-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(25, 118, 210, 0.9);
+  backdrop-filter: blur(5px);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+  font-family: Arial, sans-serif;
+}
+
+.navbar-title {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.navbar-button {
+  background-color: white;
+  color: #1976d2;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-button:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-button:active {
+  transform: translateY(0);
+}
+
+.print-button {
+  background-color: #2196f3;
+  color: white;
+}
+
+.print-button:hover {
+  background-color: #1976d2;
+}
+
+/* Calendar export modal styles */
+.calendar-export-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100001;
+  font-family: Arial, sans-serif;
+}
+
+.calendar-export-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.calendar-export-header {
+  margin-top: 0;
+  color: #1976d2;
+  font-size: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.calendar-export-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+}
+
+.calendar-export-options {
+  margin: 15px 0;
+}
+
+.calendar-export-all {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-events-list {
+  margin-top: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.calendar-event-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-event-item:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.calendar-event-details {
+  font-size: 12px;
+  color: #666;
+}
+
+.calendar-event-title {
+  font-weight: bold;
+}
+
+.add-to-gcal {
+  background-color: #4285F4;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.calendar-action-section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.calendar-close-button {
+  background-color: #f5f5f5;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-close-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Hide navbar when printing */
+@media print {
+  .print-preview-navbar,
+  .crew-roster-navbar {
+    display: none !important;
+  }
+  
+  /* Remove any margins/padding added for the navbar */
+  body {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Page styles for different views */
+.flyingcards-page {
+  size: A4 portrait;
+  margin: 0.5cm;
+}
+
+.calendar-page {
+  size: A4 landscape;
+  margin: 0.5cm;
+}
+
+.day-page {
+  size: A4 portrait;
+  margin: 0.5cm;
+}
+
+.both-page {
+  size: A4 portrait;
+  margin: 0.5cm;
+}
+
+.both-page-first {
+  size: A4 landscape;
+  margin: 0.5cm;
+}
+
+/* Day view table formatting for better crew display */
+.day-view-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+.day-view-table th, .day-view-table td {
+  padding: 4px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+
+/* Define column widths to allocate more space to crew info */
+.day-view-table th:nth-child(1), .day-view-table td:nth-child(1) { width: 3%; } /* Day */
+.day-view-table th:nth-child(2), .day-view-table td:nth-child(2) { width: 5%; } /* Date */
+.day-view-table th:nth-child(3), .day-view-table td:nth-child(3) { width: 4%; } /* Duty */
+.day-view-table th:nth-child(4), .day-view-table td:nth-child(4) { width: 32%; } /* Details */
+.day-view-table th:nth-child(5), .day-view-table td:nth-child(5) { width: 5%; } /* CONX */
+.day-view-table th:nth-child(6), .day-view-table td:nth-child(6) { width: 5%; } /* Block */
+.day-view-table th:nth-child(7), .day-view-table td:nth-child(7) { width: 5%; } /* Cred */
+.day-view-table th:nth-child(8), .day-view-table td:nth-child(8) { width: 18%; } /* Crew - more width */
+
+/* Ensure text wrapping in cells */
+.day-view-table td {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Crew information styling */
+.crew-member {
+  margin-bottom: 1px;
+  font-size: 0.85em;
+  line-height: 1.2;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.crew-change-indicator {
+  display: inline-block;
+  font-size: 8px;
+  padding: 1px 2px;
+  margin-bottom: 2px;
+  background-color: #ffe0b2;
+  color: #f57c00;
+  border-radius: 2px;
+}
+
+/* Day separator styling */
+.day-separator td {
+  height: 5px;
+  padding: 0;
+  border: none;
+  border-bottom: 1px dashed #ccc;
+  background-color: #f9f9f9;
+}
+
+/* Print-specific optimizations */
+@media print {
+  .day-view-table {
+    font-size: 7pt;
+    width: 100%;
+  }
+  
+  .day-view-table th, .day-view-table td {
+    padding: 2px;
+  }
+  
+  /* Ensure crew column stays wide enough */
+  .day-view-table th:nth-child(8), .day-view-table td:nth-child(8) {
+    width: 20%; /* Even more width when printing */
+  }
+  
+  /* Smaller fonts for details to fit more info */
+  .day-view-table td:nth-child(4) {
+    font-size: 6.5pt;
+  }
+  
+  /* Further reduce crew text size but ensure it's still readable */
+  .crew-member {
+    font-size: 6.5pt;
+    line-height: 1.1;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Improve table compactness */
+  .day-view-table tr {
+    page-break-inside: avoid;
+  }
+  
+  /* Auto-scaling container to fit content */
+  .compact-day-view {
+    max-width: 100%;
+    overflow: visible;
+  }
+  
+  /* Ensure cells can shrink when needed */
+  .day-view-table td {
+    max-width: 100%;
+  }
+}
+
+/* Hide duplicate summary/stat elements in calendar view */
+.roster-left-grid,
+.grid-10 {
+  display: none !important;
+}
