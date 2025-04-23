@@ -12,7 +12,8 @@ Then extract the zip folder in a convienent location.
 ### 2. Load the Extension in Chrome
 1. Open Google Chrome (or Brave browser) and navigate to `chrome://extensions/` ('brave://extensions/' for Brave)
 2. Enable **Developer mode** (toggle in the top right corner)
-3. ![image](https://github.com/user-attachments/assets/ff0a2d35-aef2-4fa6-9c90-2f5e6f51863f)
+3. ![image](https://github.com/user-attachments/assets/5d8eff67-8b99-42bf-946c-d53a277f41be)
+
 
 4. Click **Load unpacked**
 5. ![image](https://github.com/user-attachments/assets/5d7fa33a-f697-4c9c-855d-5718047ae69f)
