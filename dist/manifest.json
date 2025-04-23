@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Crew Roster Exporter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Export and print your flight crew roster from the web portal.",
   "permissions": [
     "scripting",
@@ -13,7 +13,7 @@
     "https://crew-auea-prod.roiscloud.com/qq/portal/page/roster*"
   ],
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "index.html",
     "default_title": "Crew Roster Exporter"
   },
   "background": {

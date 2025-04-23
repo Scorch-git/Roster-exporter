@@ -1710,24 +1710,46 @@ function printRoster(view) {
 function extractDateRange() {
   console.log('[CREW ROSTER EXPORTER] Extracting date range from the page');
   try {
-    // Try to find the date range element
-    const dateRangeElement = document.querySelector('.roster-period, .ant-select-selection-item, [class*="roster-period"], [class*="date-range"]');
-    
-    if (dateRangeElement) {
+    // 1. Try original selectors (Period view, etc)
+    const dateRangeElement = document.querySelector(
+      '.roster-period, .ant-select-selection-item, [class*="roster-period"], [class*="date-range"]'
+    );
+    if (dateRangeElement && dateRangeElement.textContent.trim()) {
       const dateRange = dateRangeElement.textContent.trim();
       console.log('[CREW ROSTER EXPORTER] Found date range:', dateRange);
       return dateRange;
     }
-    
-    // If we couldn't find a specific date range element, try to find month/year indicators
+
+    // 2. Try Ant Design Picker input (Calendar view, e.g. May 2025)
+    const antPickerInput = document.querySelector('.ant-picker-input input[readonly]');
+    if (antPickerInput) {
+      // Prefer value, fallback to placeholder
+      const value = antPickerInput.value || antPickerInput.getAttribute('placeholder');
+      if (value && value.trim()) {
+        console.log('[CREW ROSTER EXPORTER] Found ant-picker-input value:', value.trim());
+        return value.trim();
+      }
+    }
+
+    // 3. Try any visible input with a date/month pattern
+    const inputEls = Array.from(document.querySelectorAll('input[readonly]'));
+    for (const input of inputEls) {
+      const val = input.value || input.getAttribute('placeholder') || '';
+      if (/\d{4}|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec/.test(val)) {
+        console.log('[CREW ROSTER EXPORTER] Found generic date input:', val.trim());
+        return val.trim();
+      }
+    }
+
+    // 4. Try month/year indicators (legacy fallback)
     const monthElement = document.querySelector('[class*="month-indicator"], [class*="year-indicator"], .month, .year');
-    if (monthElement) {
+    if (monthElement && monthElement.textContent.trim()) {
       const monthYear = monthElement.textContent.trim();
       console.log('[CREW ROSTER EXPORTER] Found month/year:', monthYear);
       return monthYear;
     }
-    
-    // If all else fails, extract from the first day element
+
+    // 5. Try to construct from calendar grid (existing fallback)
     const firstDayElement = document.querySelector('[class*="day-number"], [class*="date-number"]');
     const lastDayElement = document.querySelectorAll('[class*="day-number"], [class*="date-number"]');
     
@@ -1747,8 +1769,8 @@ function extractDateRange() {
       console.log('[CREW ROSTER EXPORTER] Constructed date range:', dateRange);
       return dateRange;
     }
-    
-    // Default fallback
+
+    // 6. Final fallback: current month/year
     const today = new Date();
     const month = today.toLocaleString('default', { month: 'long' });
     const year = today.getFullYear();
@@ -2344,24 +2366,46 @@ function generatePrintPreview(options) {
 function extractDateRange() {
   console.log('[CREW ROSTER EXPORTER] Extracting date range from the page');
   try {
-    // Try to find the date range element
-    const dateRangeElement = document.querySelector('.roster-period, .ant-select-selection-item, [class*="roster-period"], [class*="date-range"]');
-    
-    if (dateRangeElement) {
+    // 1. Try original selectors (Period view, etc)
+    const dateRangeElement = document.querySelector(
+      '.roster-period, .ant-select-selection-item, [class*="roster-period"], [class*="date-range"]'
+    );
+    if (dateRangeElement && dateRangeElement.textContent.trim()) {
       const dateRange = dateRangeElement.textContent.trim();
       console.log('[CREW ROSTER EXPORTER] Found date range:', dateRange);
       return dateRange;
     }
-    
-    // If we couldn't find a specific date range element, try to find month/year indicators
+
+    // 2. Try Ant Design Picker input (Calendar view, e.g. May 2025)
+    const antPickerInput = document.querySelector('.ant-picker-input input[readonly]');
+    if (antPickerInput) {
+      // Prefer value, fallback to placeholder
+      const value = antPickerInput.value || antPickerInput.getAttribute('placeholder');
+      if (value && value.trim()) {
+        console.log('[CREW ROSTER EXPORTER] Found ant-picker-input value:', value.trim());
+        return value.trim();
+      }
+    }
+
+    // 3. Try any visible input with a date/month pattern
+    const inputEls = Array.from(document.querySelectorAll('input[readonly]'));
+    for (const input of inputEls) {
+      const val = input.value || input.getAttribute('placeholder') || '';
+      if (/\d{4}|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec/.test(val)) {
+        console.log('[CREW ROSTER EXPORTER] Found generic date input:', val.trim());
+        return val.trim();
+      }
+    }
+
+    // 4. Try month/year indicators (legacy fallback)
     const monthElement = document.querySelector('[class*="month-indicator"], [class*="year-indicator"], .month, .year');
-    if (monthElement) {
+    if (monthElement && monthElement.textContent.trim()) {
       const monthYear = monthElement.textContent.trim();
       console.log('[CREW ROSTER EXPORTER] Found month/year:', monthYear);
       return monthYear;
     }
-    
-    // If all else fails, extract from the first day element
+
+    // 5. Try to construct from calendar grid (existing fallback)
     const firstDayElement = document.querySelector('[class*="day-number"], [class*="date-number"]');
     const lastDayElement = document.querySelectorAll('[class*="day-number"], [class*="date-number"]');
     
@@ -2381,8 +2425,8 @@ function extractDateRange() {
       console.log('[CREW ROSTER EXPORTER] Constructed date range:', dateRange);
       return dateRange;
     }
-    
-    // Default fallback
+
+    // 6. Final fallback: current month/year
     const today = new Date();
     const month = today.toLocaleString('default', { month: 'long' });
     const year = today.getFullYear();
